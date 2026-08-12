@@ -1,0 +1,7 @@
+Strg + K, C
+Strg + K, U
+Strg + R, R
+Alt Arrow Up/Down
+Alt + Drag
+Strg + D
+Strg + K, D

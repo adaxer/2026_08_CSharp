@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!--<Nullable>enable</Nullable>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\andre\OneDrive - Andreas Daxer\Training\C#-Grundkurs\Projekte\Lab02\Lab02\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\andre\OneDrive - Andreas Daxer\Training\C#-Grundkurs\Projekte\Lab02\Lab02\.editorconfig" />
+  </ItemGroup>
+
+</Project>
