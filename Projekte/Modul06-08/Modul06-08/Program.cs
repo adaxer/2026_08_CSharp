@@ -4,6 +4,8 @@ internal class Program
 {
     static void Main(string[] args)
     {
+        OOPAktionen.DoSomething();
+
         PointStruct? nullablePointStruct = null;
         Nullable<PointStruct> theSameThing=null;
 
