@@ -10,7 +10,7 @@ namespace Array_Bedingungen
             #region Arrays
 
             //ARRAYS
-            ///Arrays sind Collections, welche mehrere Variablen eines Datentyps speichern können. Die Größe des Arrays muss bei der
+            ///Arrays sind Collections, welche mehrere Variablen eines Datentyps speichern kÃ¶nnen. Die GrÃ¶ÃŸe des Arrays muss bei der
             ///Initialisierung entweder durch eine Zahl oder durch eine bestimmte Anzahl von spezifischen Elementen definiert werden.
             int[] zahlen = { 2, 4, 78, -123, -8, 0, 11111 };
             //Der Zugiff auf einzelne Array-Positionen erfolgt durch einen Nullbasierten Index
@@ -18,18 +18,18 @@ namespace Array_Bedingungen
             zahlen[2] = 1234;
             Console.WriteLine(zahlen[2]);
 
-            //Array-Deklaration ohne direkte Initialisierung der Positionen (Größe muss angegeben werden)
+            //Array-Deklaration ohne direkte Initialisierung der Positionen (GrÃ¶ÃŸe muss angegeben werden)
             string[] worte = new string[5];
 
-            //Verwendung der Contains-Funktion eines Arrays (überprüft auf das Vorhandensein eines Elements)
+            //Verwendung der Contains-Funktion eines Arrays (Ã¼berprÃ¼ft auf das Vorhandensein eines Elements)
             Console.WriteLine(zahlen.Contains(-123));
             Console.WriteLine(zahlen.Contains(555));
 
-            //Ausgabe der Länge (Anzahl der Elemente) des Arrays
+            //Ausgabe der LÃ¤nge (Anzahl der Elemente) des Arrays
             Console.WriteLine(zahlen.Length);
 
-            //Stringarray mit 10 leeren Plätzen
-            string[] Wörter = new string[10];
+            //Stringarray mit 10 leeren PlÃ¤tzen
+            string[] WÃ¶rter = new string[10];
 
             //String als Char-Array
             string beispiel = "Hallo";
@@ -58,18 +58,18 @@ namespace Array_Bedingungen
             int b = 23;
 
             //IF-ELSEIF-ELSE-Block
-            ///Das Programm wird den ersten Block ausführen, bei welchem er auf eine wahre Bedingung trifft und dann am Ende des Blocks mit
+            ///Das Programm wird den ersten Block ausfÃ¼hren, bei welchem er auf eine wahre Bedingung trifft und dann am Ende des Blocks mit
             ///dem Code weiter machen
             if (a < b)
             {
                 Console.WriteLine("A ist kleiner als B");
             }
-            //Es kann beliebig viele ELSE-IF-Blöcke geben
+            //Es kann beliebig viele ELSE-IF-BlÃ¶cke geben
             else if (a > b)
             {
-                Console.WriteLine("A ist größer als B");
+                Console.WriteLine("A ist grÃ¶ÃŸer als B");
             }
-            //Wenn keine der Bedingungen wahr ist, wird der (optionale) ELSE-Block ausgeführt
+            //Wenn keine der Bedingungen wahr ist, wird der (optionale) ELSE-Block ausgefÃ¼hrt
             else
                 Console.WriteLine("A ist gleich B");
 

@@ -13,7 +13,7 @@ namespace Schleifen_Enums
 
             //WHILE-Schleife
             ///Die WHILE-Schleife wird wiederholt, solange die Bedingung wahr ist. Ist die Bedingung von vornherein unwahr, dann wird die Schleife
-            ///übersprungen
+            ///Ã¼bersprungen
             while (a < b)
             {
                 Console.WriteLine("A ist kleiner B");
@@ -28,13 +28,13 @@ namespace Schleifen_Enums
             a = -45;
             //DO-WHILE-Schleife
             ///Auch die DO-WHILE-Schleife wird wiederholt, solange die Bedingung wahr ist. Allerdings wird die Bedingung erst am Schleifen_
-            ///ende geprüft, weshalb die Schleife mindestens einmal durchläuft.
+            ///ende geprÃ¼ft, weshalb die Schleife mindestens einmal durchlÃ¤uft.
             do
             {
                 Console.WriteLine(a);
                 a--;
 
-                //Der CONTINUE-Befehl beendet den aktuellen Schleifendurchlauf und lässt erneut die Bedingung prüfen. Ist die Bedingung wahr
+                //Der CONTINUE-Befehl beendet den aktuellen Schleifendurchlauf und lÃ¤sst erneut die Bedingung prÃ¼fen. Ist die Bedingung wahr
                 ///beginnt ein neuer Durchlauf
                 continue;
 
@@ -42,8 +42,8 @@ namespace Schleifen_Enums
 
 
             //FOR-Schleife
-            ///Der FOR-Schleife wird ein Laufindex (i) sowie eine Bedingung und eine Anweisung übergeben. Am Ende jedes Durchlaufes wird die
-            ///Anweisung ausgeführt. Wenn die Bedingung nicht (mehr) wahr ist, wird kein (weiterer) Schleifendurchlauf begonnen.
+            ///Der FOR-Schleife wird ein Laufindex (i) sowie eine Bedingung und eine Anweisung Ã¼bergeben. Am Ende jedes Durchlaufes wird die
+            ///Anweisung ausgefÃ¼hrt. Wenn die Bedingung nicht (mehr) wahr ist, wird kein (weiterer) Schleifendurchlauf begonnen.
             for (int i = 0; i < 10; i += 2)
             {
                 Console.WriteLine(i);
@@ -52,13 +52,13 @@ namespace Schleifen_Enums
             }
 
             int[] zahlen = { 2, 3, 5, 4 };
-            //Iteration über ein Array mittels For-Schleife
+            //Iteration Ã¼ber ein Array mittels For-Schleife
             for (int i = 0; i < zahlen.Length; i++)
             {
                 Console.WriteLine(zahlen[i]);
             }
 
-            //FOREACH-Schleifen können über Collections laufen und sprechen dabei jedes Element genau einmal an
+            //FOREACH-Schleifen kÃ¶nnen Ã¼ber Collections laufen und sprechen dabei jedes Element genau einmal an
             foreach (int item in zahlen)
             {
                 Console.WriteLine(item);
@@ -67,14 +67,14 @@ namespace Schleifen_Enums
 
             #region Enums
 
-            //ENUMERATOREN sind spezialisierte selbst-definierte Datentypen mit festgelegten möglichen Zuständen.
-            ///Dabei ist jeder Zustand an einen Integer-Wert gekoppelt, wodurch eine explizite Umwandlung (Cast) möglich ist. (vgl. Datentyp-Definition unten)
+            //ENUMERATOREN sind spezialisierte selbst-definierte Datentypen mit festgelegten mÃ¶glichen ZustÃ¤nden.
+            ///Dabei ist jeder Zustand an einen Integer-Wert gekoppelt, wodurch eine explizite Umwandlung (Cast) mÃ¶glich ist. (vgl. Datentyp-Definition unten)
 
             //Deklaration und Initialisierung einer Variablen vom Enumerator-Typ
             Wochentag heutigerTag = Wochentag.Dienstag;
             Console.WriteLine($"Heute ist also {heutigerTag}.");
 
-            //For-Schleife über die möglichen Zustande des Enumerators
+            //For-Schleife Ã¼ber die mÃ¶glichen Zustande des Enumerators
             Console.WriteLine("Welcher Wochentag ist dein Lieblingstag?");
             for (int i = 1; i < 8; i++)
             {
@@ -89,7 +89,7 @@ namespace Schleifen_Enums
             heutigerTag = (Wochentag)Enum.Parse(typeof(Wochentag), "Freitag");
             Console.WriteLine($"Dein Lieblingstag ist also {heutigerTag}.");
 
-            //SWITCHs sind eine verkürzte Schreibweise für IF-ELSE-Blöcke. Mögliche Zustände der übergebenen Variablen werden 
+            //SWITCHs sind eine verkÃ¼rzte Schreibweise fÃ¼r IF-ELSE-BlÃ¶cke. MÃ¶gliche ZustÃ¤nde der Ã¼bergebenen Variablen werden 
             //in den CASES definiert
             switch (heutigerTag)
             {
@@ -109,21 +109,21 @@ namespace Schleifen_Enums
                 case Wochentag.Sonntag:
                     Console.WriteLine("Wochenende");
                     break;
-                //Wenn die übergebene Variable keinen der vordefinierten Zustände erreicht, wird der DEFAULT-Fall ausgeführt
+                //Wenn die Ã¼bergebene Variable keinen der vordefinierten ZustÃ¤nde erreicht, wird der DEFAULT-Fall ausgefÃ¼hrt
                 default:
                     Console.WriteLine("Fehlerhafte Eingabe");
                     break;
             }
 
-            //Mittels des WHEN-Stichworts kann auf Eigenschaften des betrachteten Objekts näher eingegangen werden
+            //Mittels des WHEN-Stichworts kann auf Eigenschaften des betrachteten Objekts nÃ¤her eingegangen werden
             int zahl = -45;
             switch (zahl)
             {
                 case 5:
                     Console.WriteLine("a ist 5");
                     break;
-                //zahl wird in z eingelegt (zu überprüfende Variable wird für Bedingungsprüfung vorbereitet)
-                //und mittels when auf eine Eigenschaft geprüft
+                //zahl wird in z eingelegt (zu Ã¼berprÃ¼fende Variable wird fÃ¼r BedingungsprÃ¼fung vorbereitet)
+                //und mittels when auf eine Eigenschaft geprÃ¼ft
                 case int z when z < 0:
                     Console.WriteLine("a < 0");
                     break;

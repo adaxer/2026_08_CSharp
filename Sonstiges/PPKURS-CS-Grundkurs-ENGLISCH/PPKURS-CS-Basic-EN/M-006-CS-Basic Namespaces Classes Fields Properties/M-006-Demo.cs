@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    //KLASSEN sind Vorlagen für Objekte. Sie bestimmen Eigenschaften und Funktionen dieser.
+    //KLASSEN sind Vorlagen fÃ¼r Objekte. Sie bestimmen Eigenschaften und Funktionen dieser.
     public class Lebewesen //zur Verwendung vgl. Program.cs
     {
         #region Felder und Eigenschaften
-        //FELDER (Membervariablen) sind die Variablen einzelner Objekte, welche die Zustände dieser Objekte definieren
+        //FELDER (Membervariablen) sind die Variablen einzelner Objekte, welche die ZustÃ¤nde dieser Objekte definieren
         private string name = "Hugo";
-        //EIGENSCHAFTEN (Properties) definieren mittels Getter/Setter den Lese-/Schreibzugriff für jeweils ein Feld.
-        ///In den Eigenschaften können bestimmte Bedingungen für das Lesen und Schreiben der Felder gesetzt werden, sowie der Zugriff
-        ///für Lesen und Schreiben einzeln angepasst werden
+        //EIGENSCHAFTEN (Properties) definieren mittels Getter/Setter den Lese-/Schreibzugriff fÃ¼r jeweils ein Feld.
+        ///In den Eigenschaften kÃ¶nnen bestimmte Bedingungen fÃ¼r das Lesen und Schreiben der Felder gesetzt werden, sowie der Zugriff
+        ///fÃ¼r Lesen und Schreiben einzeln angepasst werden
         //Snippet: propfull
         public string Name
         {
             get { return name; }
             set
             {
-                //Das Schlüsselwort VALUE beschreibt in einer Set-Methode den übergebenen Wert
+                //Das SchlÃ¼sselwort VALUE beschreibt in einer Set-Methode den Ã¼bergebenen Wert
                 if (value.Length > 0)
                     name = value;
             }
@@ -33,7 +33,7 @@ namespace OOP
 
         //Property, welche einen komplexen Datentypen abbildet
         public DateTime Geburtsdatum { get; set; }
-        //Read-only Property mit Rückbezug auf andere Property
+        //Read-only Property mit RÃ¼ckbezug auf andere Property
         public int AlterInJahren
         {
             get { return ((DateTime.Now - this.Geburtsdatum).Days / 365); }
@@ -42,7 +42,7 @@ namespace OOP
 
         #region Konstruktor
         //KONSTRUKTOREN sind spezielle Methoden, welche ein neues Objekt instanziiert und den Anfangszustand festlegt. Sie definieren sich
-        ///durch den Namen (derselbe, wie die Klasse) und den nicht vorhandenen Rückgabetyp (nicht mal void)
+        ///durch den Namen (derselbe, wie die Klasse) und den nicht vorhandenen RÃ¼ckgabetyp (nicht mal void)
         public Lebewesen(string name, string lieblingsnahrung, DateTime geburtsdatum)
         {
             this.Name = name;
@@ -50,8 +50,8 @@ namespace OOP
             this.Geburtsdatum = geburtsdatum;
         }
 
-        //Es können mehrere Konstruktoren definiert werden, welche unterschiedliche Übergabeparameter haben (Überladung). Ein Konstruktor, der keine
-        //Übergabeparameter hat, wird als Basiskonstruktor bezeichnet
+        //Es kÃ¶nnen mehrere Konstruktoren definiert werden, welche unterschiedliche Ãœbergabeparameter haben (Ãœberladung). Ein Konstruktor, der keine
+        //Ãœbergabeparameter hat, wird als Basiskonstruktor bezeichnet
         public Lebewesen()
         {
 
@@ -61,7 +61,7 @@ namespace OOP
         #region Methoden
 
         //MEMBERMETHODEN sind Funktionen, welche jedes Objekt einer Klasse besitzt und speziell mit diesem Objekt interagiert
-        public Lebewesen GebäreKind(string kindname)
+        public Lebewesen GebÃ¤reKind(string kindname)
         {
             return new Lebewesen(kindname, this.Nachname, DateTime.Now);
         }
@@ -90,7 +90,7 @@ namespace OOP
             Console.WriteLine(neuesLebewesen.AlterInJahren);
 
             //Aufruf einer klasseneigenen Funktion
-            Lebewesen kind = neuesLebewesen.GebäreKind("Fridolin");
+            Lebewesen kind = neuesLebewesen.GebÃ¤reKind("Fridolin");
             #endregion
         }
     }

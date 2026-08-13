@@ -8,8 +8,8 @@ namespace OOP
 {
     public abstract class Lebewesen { }
 
-    //Ein INTERFACE zwingt die implementierenden Klassen bestimmte Methoden und Eigenschaften zu implementieren, so dass diesbezüglich 
-    ///eine Typsicherheit besteht. Dieses Interface fordert die Implementierung einer Methode und einer Eigenschaft und ermöglicht
+    //Ein INTERFACE zwingt die implementierenden Klassen bestimmte Methoden und Eigenschaften zu implementieren, so dass diesbezÃ¼glich 
+    ///eine Typsicherheit besteht. Dieses Interface fordert die Implementierung einer Methode und einer Eigenschaft und ermÃ¶glicht
     ///einer Klasse 'einer Arbeit nachzugehen'.
     interface IArbeit
     {
@@ -18,11 +18,11 @@ namespace OOP
 
         string Job { get; set; }
 
-        //Es werden (wie bei abstarkten Methoden) idR nur die Methodenköpfe geschrieben. Der Rest wird in den implementierenden Klassen hinzugefügt
+        //Es werden (wie bei abstarkten Methoden) idR nur die MethodenkÃ¶pfe geschrieben. Der Rest wird in den implementierenden Klassen hinzugefÃ¼gt
         void Auszahlung();
     }
 
-    //Arbeitnehmer implementiert Interfaces, welche dieser Klasse zusätzliche Eigenschaften verleihen
+    //Arbeitnehmer implementiert Interfaces, welche dieser Klasse zusÃ¤tzliche Eigenschaften verleihen
     public class Mensch : Lebewesen, IArbeit, ICloneable
     {
         #region Modul 06-09
@@ -36,21 +36,21 @@ namespace OOP
         //Ducrh IArbeit verlangte Methode
         public void Auszahlung()
         {
-            Console.WriteLine($"{this.Vorname} {this.Nachname} hat {this.Gehalt}€ für {this.Job} bekommen.");
+            Console.WriteLine($"{this.Vorname} {this.Nachname} hat {this.Gehalt}â‚¬ fÃ¼r {this.Job} bekommen.");
         }
 
-        //Durch IClonable verlangte Methode (Bsp für .NET-eigenes Interface)
+        //Durch IClonable verlangte Methode (Bsp fÃ¼r .NET-eigenes Interface)
         ///Diese Methode erlaubt die Erstellung einer Kopie dieses Objekts
         public object Clone()
         {
             //Durch .MemberwiseClone() werden alle Wertetypen des Originalobjekts kopiert
             Mensch neuerMensch = (Mensch)this.MemberwiseClone();
-            //Referenzen müssen manuell neu zugewiesen werden oder ebenfalls über IClonable verfügen und durch .Clone() kopiert werden
+            //Referenzen mÃ¼ssen manuell neu zugewiesen werden oder ebenfalls Ã¼ber IClonable verfÃ¼gen und durch .Clone() kopiert werden
             neuerMensch.Mutter = this.Mutter;
             return neuerMensch;
         }
 
-        //Alternativ zu IClonable kann ein Kopierkonstruktor zur Dublizierung verwendet werden. Hier werden die Werte und Referenzen koiert und übertragen
+        //Alternativ zu IClonable kann ein Kopierkonstruktor zur Dublizierung verwendet werden. Hier werden die Werte und Referenzen koiert und Ã¼bertragen
         public Mensch(Mensch alterMensch)
         {
             this.Vorname = alterMensch.Vorname;
@@ -75,10 +75,10 @@ namespace OOP
             IArbeit arbeitendesObjekt = mensch;
             //Zugriff auf Interface-Methode
             arbeitendesObjekt.Auszahlung();
-            //Übergabe an Methode, welche ein Objekt des Interfaces erwartet
-            Gehaltserhöhung(arbeitendesObjekt);
-            //Übergabe benötigt keinen Cast aus implementierender Klasse
-            Gehaltserhöhung(mensch);
+            //Ãœbergabe an Methode, welche ein Objekt des Interfaces erwartet
+            GehaltserhÃ¶hung(arbeitendesObjekt);
+            //Ãœbergabe benÃ¶tigt keinen Cast aus implementierender Klasse
+            GehaltserhÃ¶hung(mensch);
 
             //Aufruf der Clone()-Funktion des IClonable-Interfaces
             Mensch kopierterMensch = (Mensch)mensch.Clone();
@@ -86,11 +86,11 @@ namespace OOP
         }
 
         //Bsp-Methode, welche ein Objekt vom Typ des Interfaces verlangt
-        public static void Gehaltserhöhung(IArbeit arbeitendesObjekt)
+        public static void GehaltserhÃ¶hung(IArbeit arbeitendesObjekt)
         {
             arbeitendesObjekt.Gehalt += 100;
 
-            //Prüfung des Objekts auf Laufzeittyp
+            //PrÃ¼fung des Objekts auf Laufzeittyp
             if (arbeitendesObjekt is Mensch)
             {
                 //Cast

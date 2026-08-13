@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fahrzeugpark
 {
-    //Interface zur Definition einer 'Beladungsfähigkeit'
+    //Interface zur Definition einer 'BeladungsfÃ¤higkeit'
     interface IBeladbar
     {
         Fahrzeug Ladung { get; set; }
@@ -18,7 +18,7 @@ namespace Fahrzeugpark
 
     public abstract class Fahrzeug { }
 
-    //Durch die Implemetierung eines Interfaces können Objekte dieser Klasse auch als Objekte des Interfaces betrachtet werden
+    //Durch die Implemetierung eines Interfaces kÃ¶nnen Objekte dieser Klasse auch als Objekte des Interfaces betrachtet werden
     public class Schiff : Fahrzeug, IBeladbar
     {
         #region Lab 06-01
@@ -31,23 +31,23 @@ namespace Fahrzeugpark
         public override string Info()
         {
             if (this.Ladung == null)
-                return "Das Schiff " + base.Info() + $" Es fährt mit {this.Treibstoff}.";
+                return "Das Schiff " + base.Info() + $" Es fÃ¤hrt mit {this.Treibstoff}.";
             else
-                return "Das Schiff " + base.Info() + $" Es fährt mit {this.Treibstoff} und transportiert '{this.Ladung.Name}'.";
+                return "Das Schiff " + base.Info() + $" Es fÃ¤hrt mit {this.Treibstoff} und transportiert '{this.Ladung.Name}'.";
         }
 
         //Durch IBeladbar verlangte Methoden
         public void Belade(Fahrzeug fz)
         {
-            //Prüfung auf Gleichheit der Fahrzeuge
+            //PrÃ¼fung auf Gleichheit der Fahrzeuge
             if (this.Equals(fz))
             {
                 Console.WriteLine("Das Fahrzeug kann sich nicht selber transportieren.");
             }
-            //Prüfung, ob der Ladeplatz leer ist
+            //PrÃ¼fung, ob der Ladeplatz leer ist
             else if (this.Ladung == null)
             {
-                //Übernehmen der Ladung
+                //Ãœbernehmen der Ladung
                 this.Ladung = fz;
                 //Erfolgsmeldung
                 Console.WriteLine($"Ladevorgang von '{fz.Name}' auf '{this.Name}' erfolgreich.");
@@ -59,14 +59,14 @@ namespace Fahrzeugpark
 
         public Fahrzeug Entlade()
         {
-            //Prüfung, ob Ladung vorhanden ist
+            //PrÃ¼fung, ob Ladung vorhanden ist
             if (this.Ladung != null)
             {
 				//Ladung --> [Fahrzeug]
 
                 //Zwischenspeichern zur Ausgabe
                 Fahrzeug fz = this.Ladung; //Ladung --> [Fahrzeug] <-- fz
-				//Löschung der Ladung
+				//LÃ¶schung der Ladung
 				this.Ladung = null; //Ladung   [Fahrzeug] <-- fz
                 //Erfolgsmeldung
                 Console.WriteLine($"Entladevorgang von '{fz.Name}' erfolgreich.");
@@ -75,7 +75,7 @@ namespace Fahrzeugpark
             //Fehlermeldung
             else
                 Console.WriteLine($"'{this.Name} hat keine Ladung geladen.");
-            //Rückgabe von null, falls kein Fahrzeug geladen ist
+            //RÃ¼ckgabe von null, falls kein Fahrzeug geladen ist
             return null;
         }
     }
@@ -88,7 +88,7 @@ namespace Fahrzeugpark
     {
         static void Main(string[] args)
         {
-            //Ändern des durch Console verwendeten Zeichensatzes auf Unicode (damit das €-Zeichen angezeigt werden kann)
+            //Ã„ndern des durch Console verwendeten Zeichensatzes auf Unicode (damit das â‚¬-Zeichen angezeigt werden kann)
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             #region Lab 06-09
@@ -121,13 +121,13 @@ namespace Fahrzeugpark
             //Test, ob fz1 beladbar ist
             if (fz1 is IBeladbar)
             {
-                //Cast des Fahrzeuges in IBeladbar und Ausführung der Belade()-Methode
+                //Cast des Fahrzeuges in IBeladbar und AusfÃ¼hrung der Belade()-Methode
                 ((IBeladbar)fz1).Belade(fz2);
             }
             //Test, ob fz2 beladbar ist
             else if (fz2 is IBeladbar)
             {
-                //Cast des Fahrzeuges in IBeladbar mittels AS und Ausführung der Belade()-Methode
+                //Cast des Fahrzeuges in IBeladbar mittels AS und AusfÃ¼hrung der Belade()-Methode
                 (fz2 as IBeladbar).Belade(fz1);
             }
             //Fehlermeldung

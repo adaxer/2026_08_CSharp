@@ -12,11 +12,11 @@ namespace Fahrzeugpark
         //Lab08 ist Erweiterung von Lab07
         #endregion
 
-        //Methode zur Ausgabe von Objektinformationen | virtual erlaubt das Überschreiben durch erbende Klassen
+        //Methode zur Ausgabe von Objektinformationen | virtual erlaubt das Ãœberschreiben durch erbende Klassen
         public virtual string Info() { ...}
     }
 
-    //Schiff erbt von der Fahrzeug-Klasse und übernimmt deren Member
+    //Schiff erbt von der Fahrzeug-Klasse und Ã¼bernimmt deren Member
     public class Schiff : Fahrzeug
     {
         //Klasseneigener Enum
@@ -31,10 +31,10 @@ namespace Fahrzeugpark
             this.Treibstoff = treibstoff;
         }
 
-        //Überxchreibung der Info()-Methode mit Bezug auf die Methode der Mutterklasse (base)
+        //Ãœberxchreibung der Info()-Methode mit Bezug auf die Methode der Mutterklasse (base)
         public override string Info()
         {
-            return "Das Schiff " + base.Info() + $" Es fährt mit {this.Treibstoff}.";
+            return "Das Schiff " + base.Info() + $" Es fÃ¤hrt mit {this.Treibstoff}.";
         }
     }
 
@@ -50,23 +50,23 @@ namespace Fahrzeugpark
 
         public override string Info()
         {
-            return "Der PKW " + base.Info() + $" Er hat {this.AnzahlTueren} Türen.";
+            return "Der PKW " + base.Info() + $" Er hat {this.AnzahlTueren} TÃ¼ren.";
         }
     }
 
     //vgl. Schiff
     public class Flugzeug : Fahrzeug
     {
-        public int MaxFlughöhe { get; set; }
+        public int MaxFlughÃ¶he { get; set; }
 
         public Flugzeug(string name, int maxG, double preis, int maxFH) : base(name, maxG, preis)
         {
-            this.MaxFlughöhe = maxFH;
+            this.MaxFlughÃ¶he = maxFH;
         }
 
         public override string Info()
         {
-            return "Das Flugzeug " + base.Info() + $" Es kann bis auf {this.MaxFlughöhe}m aufsteigen.";
+            return "Das Flugzeug " + base.Info() + $" Es kann bis auf {this.MaxFlughÃ¶he}m aufsteigen.";
         }
     }
 
@@ -74,7 +74,7 @@ namespace Fahrzeugpark
     {
         static void Main(string[] args)
         {
-            //Ändern des durch Console verwendeten Zeichensatzes auf Unicode (damit das €-Zeichen angezeigt werden kann)
+            //Ã„ndern des durch Console verwendeten Zeichensatzes auf Unicode (damit das â‚¬-Zeichen angezeigt werden kann)
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             #region Lab 06-07

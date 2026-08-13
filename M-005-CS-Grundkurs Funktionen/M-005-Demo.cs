@@ -24,7 +24,7 @@ namespace Funktionen
             Console.WriteLine(erg);
 
 
-            //TryParse() als Bsp für Out-Verwendung
+            //TryParse() als Bsp fÃ¼r Out-Verwendung
             string eingabe = Console.ReadLine();
             if (int.TryParse(eingabe, out int result))
             {
@@ -32,22 +32,22 @@ namespace Funktionen
             }
         }
 
-        //Jede Funktion/Methode besteht aus einem Kopf und einem Körper
-        ///Der Kopf besteht aus den MODIFIERN (public static), dem RÜCKGABEWERT (int), dem NAMEN (Addiere) sowie den ÜBERGABEPARAMETERN
+        //Jede Funktion/Methode besteht aus einem Kopf und einem KÃ¶rper
+        ///Der Kopf besteht aus den MODIFIERN (public static), dem RÃœCKGABEWERT (int), dem NAMEN (Addiere) sowie den ÃœBERGABEPARAMETERN
         static int Addiere(int a, int b)
         {
-            //Der RETURN-Befehl weist die Methode an einen Wert als Rückgabewert an den Aufrufe zurückzugeben
+            //Der RETURN-Befehl weist die Methode an einen Wert als RÃ¼ckgabewert an den Aufrufe zurÃ¼ckzugeben
             return a + b;
         }
 
-        //Funktion, welche den gleichen Bezeichner haben, nennt man ÜBERLADENE Funktionen. Diese müssen sich in Anzahl und/oder Art der 
-        ///Übergabeparameter unterscheiden, damit der Aufruf eindeutig ist.
+        //Funktion, welche den gleichen Bezeichner haben, nennt man ÃœBERLADENE Funktionen. Diese mÃ¼ssen sich in Anzahl und/oder Art der 
+        ///Ãœbergabeparameter unterscheiden, damit der Aufruf eindeutig ist.
         static double Addiere(double a, double b)
         {
             return a + b;
         }
 
-        //Das PARAMS-Stichwort erlaubt die Übergabe einer beliebige Anzahl von gleichartigen Daten, welche innerhalb
+        //Das PARAMS-Stichwort erlaubt die Ãœbergabe einer beliebige Anzahl von gleichartigen Daten, welche innerhalb
         //der Methode als Array interpretiert werden
         static int BildeSumme(params int[] summanden)
         {
@@ -62,14 +62,14 @@ namespace Funktionen
         }
 
         ///Wird einem Parameter mittels =-Zeichen ein Defaultwert zugewiesen wird dieser Parameter OPTIONAL und muss bei Aufruf nicht zwangs-
-        ///läufig mitgegeben werden. OPTIONALE Parameter müssen am Ende der Parameter stehen.
+        ///lÃ¤ufig mitgegeben werden. OPTIONALE Parameter mÃ¼ssen am Ende der Parameter stehen.
         static int Subtrahiere(int a, int b, int c = 0, int d = 0)
         {
             return a - b - c - d;
         }
 
-        //Das OUT-Stichwort ermöglich einer Methode mehr als einen Rückgabewert zu haben. Dabei kann die Variable direkt in der Funktions-
-        ///übergabe deklariert werden
+        //Das OUT-Stichwort ermÃ¶glich einer Methode mehr als einen RÃ¼ckgabewert zu haben. Dabei kann die Variable direkt in der Funktions-
+        ///Ã¼bergabe deklariert werden
         static int AddiereUndSubtrahiere(int a, int b, out int differenz)
         {
             differenz = a - b;

@@ -17,7 +17,7 @@ namespace Fahrzeugpark
         public double Preis { get; set; }
         public bool MotorLaeuft { get; set; }
 
-        //Konstruktor mit Übergabeparametern und Standartwerten
+        //Konstruktor mit Ãœbergabeparametern und Standartwerten
         public Fahrzeug(string name, int maxG, double preis)
         {
             this.Name = name;
@@ -31,16 +31,16 @@ namespace Fahrzeugpark
         public string Info()
         {
             if (this.MotorLaeuft)
-                return $"{this.Name} kostet {this.Preis}€ und fährt momentan mit {this.AktGeschwindigkeit} von maximal {this.MaxGeschwindigkeit}km/h.";
+                return $"{this.Name} kostet {this.Preis}â‚¬ und fÃ¤hrt momentan mit {this.AktGeschwindigkeit} von maximal {this.MaxGeschwindigkeit}km/h.";
             else
-                return $"{this.Name} kostet {this.Preis}€ und könnte maximal {this.MaxGeschwindigkeit}km/h fahren.";
+                return $"{this.Name} kostet {this.Preis}â‚¬ und kÃ¶nnte maximal {this.MaxGeschwindigkeit}km/h fahren.";
         }
 
         //Methode zum Starten des Motors
         public void StarteMotor()
         {
             if (this.MotorLaeuft)
-                Console.WriteLine($"Der Motor von {this.Name} läuft bereits.");
+                Console.WriteLine($"Der Motor von {this.Name} lÃ¤uft bereits.");
             else
             {
                 this.MotorLaeuft = true;
@@ -85,16 +85,16 @@ namespace Fahrzeugpark
     {
         static void Main(string[] args)
         {
-            //Ändern des durch Console verwendeten Zeichensatzes auf Unicode (damit das €-Zeichen angezeigt werden kann)
+            //Ã„ndern des durch Console verwendeten Zeichensatzes auf Unicode (damit das â‚¬-Zeichen angezeigt werden kann)
             Console.OutputEncoding = System.Text.Encoding.Unicode;
 
             #region Lab 06: Fahrzeug-Klasse
             //Deklaration einer Fahrzeug-Variablen und Initialisierung mittels einer Fahrzeug-Instanz
             Fahrzeug fz1 = new Fahrzeug("Mercedes", 190, 23000);
-            //Ausführen der Info()-Methode des Fahrzeugs und Ausgabe in der Konsole
+            //AusfÃ¼hren der Info()-Methode des Fahrzeugs und Ausgabe in der Konsole
             Console.WriteLine(fz1.Info() + "\n");
 
-            //Diverse Methodenausführungen
+            //Diverse MethodenausfÃ¼hrungen
             fz1.StarteMotor();
             fz1.Beschleunige(120);
             Console.WriteLine(fz1.Info() + "\n");

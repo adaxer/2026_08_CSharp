@@ -13,7 +13,7 @@ namespace OOP
         #endregion
 
 
-        //Mittels OVERRIDE können Methoden der Mutterklassen, welche mit VIRTUAL markiert sind, überschrieben werden. Bei Aufruf wird die neue Methode ausgeführt.
+        //Mittels OVERRIDE kÃ¶nnen Methoden der Mutterklassen, welche mit VIRTUAL markiert sind, Ã¼berschrieben werden. Bei Aufruf wird die neue Methode ausgefÃ¼hrt.
         public override string ToString()
         {
             return $"{this.Name} ist {this.AlterInJahren} Jahre alt und mag gerne {this.Lieblingsnahrung}.";
@@ -21,24 +21,24 @@ namespace OOP
 
     }
 
-    //Arbeitnehmer erbt mittels des :-Zeichens von der Person-Klasse und übernimmt somit alle Eigenschaften und Methoden von dieser.
+    //Arbeitnehmer erbt mittels des :-Zeichens von der Person-Klasse und Ã¼bernimmt somit alle Eigenschaften und Methoden von dieser.
     class Mensch : Lebewesen
     {
-        //Zusätzliche Arbeitnehmer-eigene Eigenschaften
+        //ZusÃ¤tzliche Arbeitnehmer-eigene Eigenschaften
         public string Vorname { get; set; }
         public Mensch Mutter { get; set; }
 
         //Arbeitnehmer-Konstruktor, welcher per BASE-Stichwort den Konstruktor der Personklasse aufruft. Dieser erstellt dann eine Person, gibt diese
-        ///an diesen Konstruktor zurück, welcher dann die zusätzlichen Eigenschaften einfügt
+        ///an diesen Konstruktor zurÃ¼ck, welcher dann die zusÃ¤tzlichen Eigenschaften einfÃ¼gt
         public Mensch(string vorname, string nachname, string lieblingsnahrung,  DateTime geburtsdatum, Mensch mutter = null) : base(nachname, lieblingsnahrung, geburtsdatum)
         {
             this.Vorname = vorname;
             this.Mutter = mutter;
         }
 
-        //Mittels OVERRIDE können Methoden der Mutterklassen, welche mit VIRTUAL markiert sind, überschrieben werden. Bei Aufruf wird die neue Methode ausgeführt.
-        //Mittels BASE kann ein Rückbezug zur nächst-höheren Klasse hergestellt werden.
-        //Mit SEALED kann eine Überschreibung durch Kindklassen verindert werden.
+        //Mittels OVERRIDE kÃ¶nnen Methoden der Mutterklassen, welche mit VIRTUAL markiert sind, Ã¼berschrieben werden. Bei Aufruf wird die neue Methode ausgefÃ¼hrt.
+        //Mittels BASE kann ein RÃ¼ckbezug zur nÃ¤chst-hÃ¶heren Klasse hergestellt werden.
+        //Mit SEALED kann eine Ãœberschreibung durch Kindklassen verindert werden.
         public sealed override string ToString()
         {
             string ausgabe = $"Der Mensch {this.Vorname} " + base.ToString();
@@ -68,7 +68,7 @@ namespace OOP
             Console.WriteLine(mensch2.AlterInJahren);
             Console.WriteLine(mensch2.Name);
 
-            //Ausgabe der (überschriebenen) ToString()-Methoden
+            //Ausgabe der (Ã¼berschriebenen) ToString()-Methoden
             Console.WriteLine(lebewesen);
             Console.WriteLine(mensch);
             Console.WriteLine(mensch2);
@@ -76,7 +76,7 @@ namespace OOP
             //Aufruf einer Property der abgeleiteten Klasse
             Console.WriteLine(mensch2.Vorname);
 
-            //Aufruf einer Property eines abhängigen Objekts
+            //Aufruf einer Property eines abhÃ¤ngigen Objekts
             Console.WriteLine(mensch2.Mutter.AlterInJahren);
 
             #endregion

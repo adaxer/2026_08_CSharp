@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace OOP
 {
-    //ABSTRACT definiert eine Klasse als abstrakt. D.h. von dieser Klasse können keine Objekte mehr instanziiert werden, sie dient nur noch als Mutterklasse
+    //ABSTRACT definiert eine Klasse als abstrakt. D.h. von dieser Klasse kÃ¶nnen keine Objekte mehr instanziiert werden, sie dient nur noch als Mutterklasse
     public abstract class Lebewesen
     {
         #region Modul 06-08
         //Demo M09 basiert auf Demo M08
         #endregion
 
-        //Abstrakte Methoden dürfen nur in abstrakten Klassen existieren und definieren nur
+        //Abstrakte Methoden dÃ¼rfen nur in abstrakten Klassen existieren und definieren nur
         ///eine Signatur. Die erbenden Klassen werden gezwungen eine Implementierung vorzunehmen
         public abstract void Essen();
 
@@ -57,12 +57,12 @@ namespace OOP
             if (lebewesen is Mensch)
                 Console.WriteLine("Lebewesen ist ein Mensch");
 
-            //überschriebene Methoden werden trotzdem ausgeführt
+            //Ã¼berschriebene Methoden werden trotzdem ausgefÃ¼hrt
             Console.WriteLine(lebewesen.ToString());
 
             if (lebewesen is Arbeitnehmer)
             {
-                //Rückcast des abgeleiteten Objekts aus Mutterklassevariablen in abgeleitete Variable
+                //RÃ¼ckcast des abgeleiteten Objekts aus Mutterklassevariablen in abgeleitete Variable
                 Mensch mensch2 = (Arbeitnehmer)person;
                 //Alternativer Cast
                 mensch2 = person as Arbeitnehmer;

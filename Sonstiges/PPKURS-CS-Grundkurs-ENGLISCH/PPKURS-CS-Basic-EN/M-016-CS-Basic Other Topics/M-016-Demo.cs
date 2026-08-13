@@ -7,19 +7,19 @@ namespace Fahrzeugpark
     {
         static void Main(string[] args)
         {
-            //Ändern des durch Console verwendeten Zeichensatzes auf Unicode (damit das €-Zeichen angezeigt werden kann)
+            //Ã„ndern des durch Console verwendeten Zeichensatzes auf Unicode (damit das â‚¬-Zeichen angezeigt werden kann)
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             //Bsp-Objekte
-            PKW pkw1 = PKW.ErzeugeZufälligenPKW("");
-            PKW pkw2 = PKW.ErzeugeZufälligenPKW("");
+            PKW pkw1 = PKW.ErzeugeZufÃ¤lligenPKW("");
+            PKW pkw2 = PKW.ErzeugeZufÃ¤lligenPKW("");
             Console.WriteLine(pkw1.Info());
             Console.WriteLine(pkw2.Info());
 
-            //Bsp-Anwendung von überladenen Operatoren (vgl. Fahrzeug-Klasse)
+            //Bsp-Anwendung von Ã¼berladenen Operatoren (vgl. Fahrzeug-Klasse)
             Console.WriteLine(pkw1 > pkw2);
 
-            //Bsp-Anwendung für IEnumerable (vgl. Flugzeug-Klasse)
+            //Bsp-Anwendung fÃ¼r IEnumerable (vgl. Flugzeug-Klasse)
             Flugzeug flugzeug = new Flugzeug($"Boing", 350, 90000000, 9800);
             foreach (var passagiere in flugzeug)
             {
@@ -39,8 +39,8 @@ namespace Fahrzeugpark
         [...]
 
         #region Operatoren
-        //Für Klassen können die bekannten Operatoren mittels des OPERATOR-Stichworts neu definiert werden.
-        //Hier gilt ein Fahrzeug als größer, wenn seine MaxGeschwindigkeit größer ist
+        //FÃ¼r Klassen kÃ¶nnen die bekannten Operatoren mittels des OPERATOR-Stichworts neu definiert werden.
+        //Hier gilt ein Fahrzeug als grÃ¶ÃŸer, wenn seine MaxGeschwindigkeit grÃ¶ÃŸer ist
         public static bool operator >(Fahrzeug fz1, Fahrzeug fz2)
         {
             return fz1.MaxGeschwindigkeit > fz2.MaxGeschwindigkeit;
@@ -57,7 +57,7 @@ namespace Fahrzeugpark
     {
         [...]
 
-        //Bsp-Property für IEnumerable und Indexer
+        //Bsp-Property fÃ¼r IEnumerable und Indexer
         public List<string> Passagierliste { get; set; } = new List<string>() { "Hanna", "Anna", "Mario", "Olaf" };
 
         //IEnumerable erlaubt die Verwendung des Objekts durch die foreach-Schleife, welche die GetEnumerator()-Methode aufruft
@@ -65,12 +65,12 @@ namespace Fahrzeugpark
         {
             foreach (var passagier in this.Passagierliste)
             {
-                //YIELD RETURN gibt in jedem Schleifendurchlauf ein Element zurück
+                //YIELD RETURN gibt in jedem Schleifendurchlauf ein Element zurÃ¼ck
                 yield return passagier;
             }
         }
 
-        //Indexerproperties werden über den Variablenbezeichner und eine Indexübegabe aufgerufen (wie bei Arrays und Listen)
+        //Indexerproperties werden Ã¼ber den Variablenbezeichner und eine IndexÃ¼begabe aufgerufen (wie bei Arrays und Listen)
         public string this[int index]
         {
             get { return this.Passagierliste[index]; }
@@ -80,7 +80,7 @@ namespace Fahrzeugpark
 
     public static class Hilfsmethoden
     {
-        //Mittels des THIS-Stichworts in der Parameterübergabe kann eine Methode als Erweiterungsmethode einer Klasse definiert
+        //Mittels des THIS-Stichworts in der ParameterÃ¼bergabe kann eine Methode als Erweiterungsmethode einer Klasse definiert
         //werden. Diese muss in einer statischen Klasse beschrieben werden und wird dann als Teil der zugeordneten Klasse betrachtet.
         public static int NextInclusive(this Random random, int untergrenze, int obergrenze)
         {

@@ -33,7 +33,7 @@ namespace Fahrzeugpark
     {
         static void Main(string[] args)
         {
-            //Ändern des durch Console verwendeten Zeichensatzes auf Unicode (damit das €-Zeichen angezeigt werden kann)
+            //Ã„ndern des durch Console verwendeten Zeichensatzes auf Unicode (damit das â‚¬-Zeichen angezeigt werden kann)
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             #region Lab 06
@@ -42,7 +42,7 @@ namespace Fahrzeugpark
 
             #region Lab 07: GC und statische Member
 
-            //Generierung von div. Objekten (zur Überschwemmung des RAM)
+            //Generierung von div. Objekten (zur Ãœberschwemmung des RAM)
             Fahrzeug fz1 = new Fahrzeug("BMW", 230, 25999.99);
             for (int i = 0; i < 1000; i++)
             {
@@ -51,7 +51,7 @@ namespace Fahrzeugpark
 
             //Bsp-Aufruf der GarbageCollection
             GC.Collect();
-            //Abwarten der Finalizer-Ausführungen (der Objekte)
+            //Abwarten der Finalizer-AusfÃ¼hrungen (der Objekte)
             GC.WaitForPendingFinalizers();
 
             //Aufruf der statischen Methode

@@ -21,7 +21,7 @@ namespace Fahrzeugpark
         {
             [...]
                 case 1:
-                    return PKW.ErzeugeZufälligenPKW(nameSuffix);
+                    return PKW.ErzeugeZufÃ¤lligenPKW(nameSuffix);
             [...]
         }
     }
@@ -35,8 +35,8 @@ namespace Fahrzeugpark
         //Lab11 ist Erweiterung von Lab10
         #endregion
 
-        //Statische Methode zur Erstellung eines zufälligen PKWs 
-        public static PKW ErzeugeZufälligenPKW(string plusName)
+        //Statische Methode zur Erstellung eines zufÃ¤lligen PKWs 
+        public static PKW ErzeugeZufÃ¤lligenPKW(string plusName)
         {
             string name;
             switch (generator.Next(1, 5))
@@ -64,7 +64,7 @@ namespace Fahrzeugpark
     {
         static void Main(string[] args)
         {
-            //Ändern des durch Console verwendeten Zeichensatzes auf Unicode (damit das €-Zeichen angezeigt werden kann)
+            //Ã„ndern des durch Console verwendeten Zeichensatzes auf Unicode (damit das â‚¬-Zeichen angezeigt werden kann)
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             #region Lab 06-10
@@ -72,15 +72,15 @@ namespace Fahrzeugpark
             #endregion
 
             #region Lab 11: generische Listen
-            //Deklaration der benötigten Variablen und und Initialisierung mit Instanzen der benötigten Objekte
+            //Deklaration der benÃ¶tigten Variablen und und Initialisierung mit Instanzen der benÃ¶tigten Objekte
             Queue<Fahrzeug> fzQueue = new Queue<Fahrzeug>();
             Stack<Fahrzeug> fzStack = new Stack<Fahrzeug>();
             Dictionary<Fahrzeug, Fahrzeug> fzDict = new Dictionary<Fahrzeug, Fahrzeug>();
             Random random = new Random();
-            //Deklaration und Initialisierung einer Variablen zur Bestimmung der Anzahl der Durchläufe 
+            //Deklaration und Initialisierung einer Variablen zur Bestimmung der Anzahl der DurchlÃ¤ufe 
             int anzahlFahrzeuge = 10;
 
-            //Schleife zur zufälligen Befüllung von Queue und Stack
+            //Schleife zur zufÃ¤lligen BefÃ¼llung von Queue und Stack
             for (int i = 0; i < anzahlFahrzeuge; i++)
             {
                 fzQueue.Enqueue(Fahrzeug.GeneriereFahrzeug($"_Q{i}"));
@@ -89,17 +89,17 @@ namespace Fahrzeugpark
 
             for (int i = 0; i < anzahlFahrzeuge; i++)
             {
-                //Prüfung, ob das Interface vorhanden ist (mittels Peek(), da die Objekte noch benötigt werden)...
+                //PrÃ¼fung, ob das Interface vorhanden ist (mittels Peek(), da die Objekte noch benÃ¶tigt werden)...
                 if (fzQueue.Peek() is IBeladbar)
                 {
-                    //...wenn ja, dann Cast in das Interface und Ausführung der Belade()-Methode (mittels Peek())...
+                    //...wenn ja, dann Cast in das Interface und AusfÃ¼hrung der Belade()-Methode (mittels Peek())...
                     ((IBeladbar)fzQueue.Peek()).Belade(fzStack.Peek());
-                    //...sowie Hinzufügen zum Dictionary (mittels Pop()/Dequeue(), um beim nächsten Durchlauf andere Objekte an den Spitzen zu haben)
+                    //...sowie HinzufÃ¼gen zum Dictionary (mittels Pop()/Dequeue(), um beim nÃ¤chsten Durchlauf andere Objekte an den Spitzen zu haben)
                     fzDict.Add(fzQueue.Dequeue(), fzStack.Pop());
                 }
                 else
                 {
-                    //... wenn nein, dann Löschung der obersten Objekte (mittels Pop()/Dequeue())
+                    //... wenn nein, dann LÃ¶schung der obersten Objekte (mittels Pop()/Dequeue())
                     fzQueue.Dequeue();
                     fzStack.Pop();
                 }

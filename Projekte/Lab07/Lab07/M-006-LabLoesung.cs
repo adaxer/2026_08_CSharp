@@ -20,7 +20,7 @@ public class Fahrzeug
         return $"Es wurden {_instanceCount} Fahrzeuge erstellt.";
     }
 
-    //Konstruktor mit ‹bergabeparametern und Standartwerten
+    //Konstruktor mit √úbergabeparametern und Standartwerten
     public Fahrzeug(string name, int maxG, double preis)
     {
         Name = name;
@@ -42,16 +42,16 @@ public class Fahrzeug
     public string Info()
     {
         if (MotorLaeuft)
-            return $"{Name} kostet {Preis}Ä und f‰hrt momentan mit {AktGeschwindigkeit} von maximal {MaxGeschwindigkeit}km/h.";
+            return $"{Name} kostet {Preis}‚Ç¨ und f√§hrt momentan mit {AktGeschwindigkeit} von maximal {MaxGeschwindigkeit}km/h.";
         else
-            return $"{Name} kostet {Preis}Ä und kˆnnte maximal {MaxGeschwindigkeit}km/h fahren.";
+            return $"{Name} kostet {Preis}‚Ç¨ und k√∂nnte maximal {MaxGeschwindigkeit}km/h fahren.";
     }
 
     //Methode zum Starten des Motors
     public void StarteMotor()
     {
         if (MotorLaeuft)
-            Console.WriteLine($"Der Motor von {Name} l‰uft bereits.");
+            Console.WriteLine($"Der Motor von {Name} l√§uft bereits.");
         else
         {
             MotorLaeuft = true;

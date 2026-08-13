@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fahrzeugpark
 {
-    //Als abstrakte Klasse dient Fahrzeug nur noch als Vorlage für erbende Klassen und kann selbst keine Objekte mehr instanziieren
+    //Als abstrakte Klasse dient Fahrzeug nur noch als Vorlage fÃ¼r erbende Klassen und kann selbst keine Objekte mehr instanziieren
     public abstract class Fahrzeug
     {
         #region Lab 06-08
@@ -15,9 +15,9 @@ namespace Fahrzeugpark
 
         #region Lab 08: Polymorphismus
 
-        //statisches Feld für Zufallsgenerator
+        //statisches Feld fÃ¼r Zufallsgenerator
         protected static Random generator = new Random();
-        //Methode zur zufälligen Generierung eines Fahrzeugs
+        //Methode zur zufÃ¤lligen Generierung eines Fahrzeugs
         public static Fahrzeug GeneriereFahrzeug(string nameSuffix = "")
         {
             switch (generator.Next(1, 4))
@@ -35,7 +35,7 @@ namespace Fahrzeugpark
         //Definition einer abstrakten Methode
         public abstract void Hupen();
 
-        //override ToString() überschreibt die Standart-ToString()-Methode
+        //override ToString() Ã¼berschreibt die Standart-ToString()-Methode
         public override string ToString()
         {
             return this.GetType().Name + ": " + this.Name;
@@ -53,7 +53,7 @@ namespace Fahrzeugpark
         //Durch Mutterklasse verlangter Member (da dort als abstract gesetzt)
         public override void Hupen()
         {
-            Console.WriteLine($"{this.Name}: 'Tröööt'");
+            Console.WriteLine($"{this.Name}: 'TrÃ¶Ã¶Ã¶t'");
         }
     }
 
@@ -85,7 +85,7 @@ namespace Fahrzeugpark
     {
         static void Main(string[] args)
         {
-            //Ändern des durch Console verwendeten Zeichensatzes auf Unicode (damit das €-Zeichen angezeigt werden kann)
+            //Ã„ndern des durch Console verwendeten Zeichensatzes auf Unicode (damit das â‚¬-Zeichen angezeigt werden kann)
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             #region Lab 06-08
@@ -97,22 +97,22 @@ namespace Fahrzeugpark
             //Arraydeklarierung
             Fahrzeug[] fahrzeuge = new Fahrzeug[10];
 
-            //Schleife über das Array zur Befüllung
+            //Schleife Ã¼ber das Array zur BefÃ¼llung
             for (int i = 0; i < fahrzeuge.Length; i++)
             {
                 //Aufruf der Zufallsmethode aus der Fahrzeug-Klasse
                 fahrzeuge[i] = Fahrzeug.GeneriereFahrzeug($"_{i}");
             }
 
-            //Deklarierung/Initialisierung der Zählvariablen
+            //Deklarierung/Initialisierung der ZÃ¤hlvariablen
             int pkws = 0, schiffe = 0, flugzeuge = 0;
 
-            //Schleife über das Array zur Identifizierung der Objekttypen
+            //Schleife Ã¼ber das Array zur Identifizierung der Objekttypen
             foreach (var item in fahrzeuge)
             {
                 //Ausgabe der ToString()-Methoden
                 Console.WriteLine(item as Fahrzeug);
-                //Prüfung des Objektstyps und Hochzählen der entsprechenden Variablen
+                //PrÃ¼fung des Objektstyps und HochzÃ¤hlen der entsprechenden Variablen
                 if (item == null) Console.WriteLine("Kein Objekt vorhanden");
                 else if (item is PKW) pkws++;
                 else if (item is Schiff) schiffe++;
@@ -121,7 +121,7 @@ namespace Fahrzeugpark
 
             //Ausgabe
             Console.WriteLine($"Es wurden {pkws} PKW(s), {flugzeuge} Flugzeug(e) und {schiffe} Schiff(e) produziert.");
-            //Ausführung der abstrakten Methode
+            //AusfÃ¼hrung der abstrakten Methode
             fahrzeuge[2].Hupen();
 
             #endregion

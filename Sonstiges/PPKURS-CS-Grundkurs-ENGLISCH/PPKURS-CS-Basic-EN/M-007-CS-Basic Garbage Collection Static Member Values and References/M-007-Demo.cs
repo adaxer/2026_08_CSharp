@@ -14,8 +14,8 @@ namespace OOP
 
         #region Statische Member
 
-        //STATISCHE Variablen und Methoden hängen an der Klasse selbst und nicht an instanziierten Objekten. Sie existieren demnach unabhängig von der Anzahl
-        ///Objekte genau einmal. Der Aufruf erfolgt über den Klassenbezeichner.
+        //STATISCHE Variablen und Methoden hÃ¤ngen an der Klasse selbst und nicht an instanziierten Objekten. Sie existieren demnach unabhÃ¤ngig von der Anzahl
+        ///Objekte genau einmal. Der Aufruf erfolgt Ã¼ber den Klassenbezeichner.
         public static int AnzahlLebewesen { get; set; } = 0;
 
         public static string ZeigeAnzahlLebewesen()
@@ -28,8 +28,8 @@ namespace OOP
         #region Destruktor
 
         //Der DESTRUKTOR wird von der GarbageCollection aufgerufen, wenn das Objekt nicht
-        //mehr referenziert ist. Hier können Aktionen definiert werden,
-        //welche zusätzlich zur 'Zerstörung' erfolgen sollen.
+        //mehr referenziert ist. Hier kÃ¶nnen Aktionen definiert werden,
+        //welche zusÃ¤tzlich zur 'ZerstÃ¶rung' erfolgen sollen.
         ~Lebewesen()
         {
             Console.WriteLine($"{this.Name} ist gestorben.");
@@ -53,7 +53,7 @@ namespace OOP
             //Aufruf eines statischen Members der Person-Klasse
             Console.WriteLine(Lebewesen.ZeigeAnzahlLebewesen());
 
-            //Nullsetzung der Variablen (um das Personenobjekt freizugeben und die GC demonstrieren zu können)
+            //Nullsetzung der Variablen (um das Personenobjekt freizugeben und die GC demonstrieren zu kÃ¶nnen)
             neuesLebewesen = null;
 
             //Aufruf der GC und Programmpause, bis alle Destruktoren beendet wurden
@@ -80,7 +80,7 @@ namespace Werte_Referenzen
         }
     }
 
-    //Struct, dessen Objekte, wie sämtliche Basisdatentypen, als WERTETYPEN betrachtet werden
+    //Struct, dessen Objekte, wie sÃ¤mtliche Basisdatentypen, als WERTETYPEN betrachtet werden
     struct PersonS
     {
         public int Alter { get; set; }
@@ -107,7 +107,7 @@ namespace Werte_Referenzen
             person.Alter++;
         }
 
-        //Mittels des REF-Stichworts können Werte als Referenzen an Methoden übergeben werden (s.u.)
+        //Mittels des REF-Stichworts kÃ¶nnen Werte als Referenzen an Methoden Ã¼bergeben werden (s.u.)
         public static void Altern(ref PersonS person)
         {
             person.Alter++;
@@ -122,20 +122,20 @@ namespace Werte_Referenzen
             Console.WriteLine($"{classP.Name}: {classP.Alter}");
             Console.WriteLine($"{structP.Name}: {structP.Alter}");
 
-            //Übergabe des Klassenobjekts (Referenztyp):
-            ///Da bei der Übergabe die Referenz des Objektes an die Methode übergeben wird, wird innerhalb der Methode
-            ///das Alter des Objekts manipuliert. Im Ergebnis ist das Objekt nach der Methode ein Jahr älter geworden.
+            //Ãœbergabe des Klassenobjekts (Referenztyp):
+            ///Da bei der Ãœbergabe die Referenz des Objektes an die Methode Ã¼bergeben wird, wird innerhalb der Methode
+            ///das Alter des Objekts manipuliert. Im Ergebnis ist das Objekt nach der Methode ein Jahr Ã¤lter geworden.
             Altern(classP);
             Console.WriteLine($"{classP.Name}: {classP.Alter}");
 
-            //Übergabe des Structobjekts (Wertetyp):
-            ///Als Wertetyp wird das Objekt bei der Übergabe an die Methode kopiert. Die Methode manipuliert nur die Kopie.
-            ///In dem Originalobjekt sind keine Veränderungen zu beobachten. Dieses Verhalten findet scih bei allen Wertetypen.
+            //Ãœbergabe des Structobjekts (Wertetyp):
+            ///Als Wertetyp wird das Objekt bei der Ãœbergabe an die Methode kopiert. Die Methode manipuliert nur die Kopie.
+            ///In dem Originalobjekt sind keine VerÃ¤nderungen zu beobachten. Dieses Verhalten findet scih bei allen Wertetypen.
             Altern(structP);
             Console.WriteLine($"{structP.Name}: {structP.Alter}");
 
-            //Übergabe eines Wertetypen mittels ref
-            ///Ducrh ref wird auch bei Wertetypen die Referenz übergeben, wodurch hier eine Manipulation des Originalobjekts durchgeführt wird.
+            //Ãœbergabe eines Wertetypen mittels ref
+            ///Ducrh ref wird auch bei Wertetypen die Referenz Ã¼bergeben, wodurch hier eine Manipulation des Originalobjekts durchgefÃ¼hrt wird.
             Altern(ref structP);
             Console.WriteLine($"{structP.Name}: {structP.Alter}");
         }

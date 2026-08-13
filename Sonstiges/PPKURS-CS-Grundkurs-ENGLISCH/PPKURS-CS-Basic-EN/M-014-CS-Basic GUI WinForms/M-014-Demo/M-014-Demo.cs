@@ -16,7 +16,7 @@ namespace WinForms
     //PARTIAL besagt, dass diese Klasse in mehrere Teile (Dateien) aufgeteilt ist
     public partial class MainWindow : Form
     {
-        //Konstruktor für das Form (Fenster)
+        //Konstruktor fÃ¼r das Form (Fenster)
         public MainWindow()
         {
             //Diese Methode initialisiert alle im Designer definierten Objekte. Sie sollte die erste Methode im Konstruktor sein
@@ -29,7 +29,7 @@ namespace WinForms
 
             for (int i = 0; i < Enum.GetValues(typeof(Test)).Length; i++)
             {
-                //Befüllung der ComboBox mit Enum-Elementen
+                //BefÃ¼llung der ComboBox mit Enum-Elementen
                 Cbb_Auswahl.Items.Add((Test)i);
             }
         }
@@ -44,12 +44,12 @@ namespace WinForms
             //Neuzuweisung einer Eigenschaft des Labels
             this.Lbl_Anweisung.Text = "HALLO";
 
-            //Prüfung, ob in der ComboBox ein Element angewählt wurde
+            //PrÃ¼fung, ob in der ComboBox ein Element angewÃ¤hlt wurde
             if (Cbb_Auswahl.SelectedItem != null)
-                //Übertrag des Elements in das Label
+                //Ãœbertrag des Elements in das Label
                 Lbl_Anweisung.Text = Cbb_Auswahl.SelectedItem.ToString();
 
-            //Prüfung, ob die Checkbox abgehakt wurde
+            //PrÃ¼fung, ob die Checkbox abgehakt wurde
             if (Cbx_Haken.Checked)
                 Lbl_Anweisung.Text = "Ist Richtig";
         }
@@ -63,13 +63,13 @@ namespace WinForms
         private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Aufruf einer MessageBox
-            DialogResult result = MessageBox.Show("Möchtest du wirklich das Programm beenden?", "Beenden", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //Prüfung des geklickten Buttons
+            DialogResult result = MessageBox.Show("MÃ¶chtest du wirklich das Programm beenden?", "Beenden", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //PrÃ¼fung des geklickten Buttons
             if (result == DialogResult.Yes)
-                //Schließend des Fensters
+                //SchlieÃŸend des Fensters
                 this.Close();
 
-            //Schließend der Applikation
+            //SchlieÃŸend der Applikation
             //Application.Exit();
         }
 
@@ -77,9 +77,9 @@ namespace WinForms
         {
             //Instanziieren eines neuen Forms
             MainWindow neuesFenster = new MainWindow();
-            //Öffen des Forms als Dialogfenster (muss exklusiv bearbeitet werden)
+            //Ã–ffen des Forms als Dialogfenster (muss exklusiv bearbeitet werden)
             neuesFenster.ShowDialog();
-            //Öffnen des Forms als gleichberechtigtes Fenster
+            //Ã–ffnen des Forms als gleichberechtigtes Fenster
             neuesFenster.Show();
         }
     }

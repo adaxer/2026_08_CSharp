@@ -8,38 +8,38 @@ namespace GenerischeListen
         static void Main(string[] args)
         {
             //Deklaration und Initialisierung einer Liste von Strings
-            System.Collections.Generic.List<string> Städteliste = new List<string>();
+            System.Collections.Generic.List<string> StÃ¤dteliste = new List<string>();
 
-            //Hinzufügen von Listeneinträgen
-            Städteliste.Add("Hamburg");
-            Städteliste.Add("Berlin");
-            Städteliste.Add("München");
-            Städteliste.Add("Köln");
-            Städteliste.Add("Düsseldorf");
+            //HinzufÃ¼gen von ListeneintrÃ¤gen
+            StÃ¤dteliste.Add("Hamburg");
+            StÃ¤dteliste.Add("Berlin");
+            StÃ¤dteliste.Add("MÃ¼nchen");
+            StÃ¤dteliste.Add("KÃ¶ln");
+            StÃ¤dteliste.Add("DÃ¼sseldorf");
 
-            //Ausgabe der Länge der Liste
-            Console.WriteLine(Städteliste.Count);
+            //Ausgabe der LÃ¤nge der Liste
+            Console.WriteLine(StÃ¤dteliste.Count);
 
             //Ausgabe der 4. Listenposition
-            Console.WriteLine(Städteliste[3]);
+            Console.WriteLine(StÃ¤dteliste[3]);
 
             //Manipulation der 5. Listenposition
-            Städteliste[4] = "Dresden";
-            Console.WriteLine(Städteliste[3]);
+            StÃ¤dteliste[4] = "Dresden";
+            Console.WriteLine(StÃ¤dteliste[3]);
 
-            //Schleife über die Liste
-            foreach (var item in Städteliste)
+            //Schleife Ã¼ber die Liste
+            foreach (var item in StÃ¤dteliste)
             {
                 Console.WriteLine(item);
             }
 
-            //Löschen des Eintrags 'Köln' (Nachfolgende Einträge rücken nach oben)
-            Städteliste.Remove("Köln");
+            //LÃ¶schen des Eintrags 'KÃ¶ln' (Nachfolgende EintrÃ¤ge rÃ¼cken nach oben)
+            StÃ¤dteliste.Remove("KÃ¶ln");
 
             //Deklaration und Initialisierung eines Dictionarys (Key: String, Value: Int)
             Dictionary<string, int> Dict = new Dictionary<string, int>();
 
-            //Hinzufügen von Dictionary-Einträgen
+            //HinzufÃ¼gen von Dictionary-EintrÃ¤gen
             Dict.Add("Hallo", 456);
             Dict.Add("Ahoj", 5);
             Dict.Add("Ciao", -78);

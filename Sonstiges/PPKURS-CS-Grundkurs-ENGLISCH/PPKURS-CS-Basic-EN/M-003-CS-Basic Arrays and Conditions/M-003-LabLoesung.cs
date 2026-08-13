@@ -16,19 +16,19 @@ namespace Schaltjahrrechner_MiniLotto
             //Deklarierung/Initialisierung der bool-Variablen
             bool istSchaltjahr = false;
 
-            //Prüfung einer Teilbarkeit durch 4
+            //PrÃ¼fung einer Teilbarkeit durch 4
             if (eingabe % 4 == 0)
             {
                 //Setzten der Variablen auf true
                 istSchaltjahr = true;
 
-                //Prüfung einer Teilbarkeit durch 100
+                //PrÃ¼fung einer Teilbarkeit durch 100
                 if (eingabe % 100 == 0)
                 {
                     //Setzten der Variablen auf false
                     istSchaltjahr = false;
 
-                    //Prüfung einer Teilbarkeit durch 400
+                    //PrÃ¼fung einer Teilbarkeit durch 400
                     if (eingabe % 400 == 0)
                         //Setzten der Variablen auf true
                         istSchaltjahr = true;
@@ -54,16 +54,16 @@ namespace Schaltjahrrechner_MiniLotto
             Console.Write("Bitte gib deinen Tipp ab (Ganzzahl zwischen 0 und 100): ");
             int tipp = int.Parse(Console.ReadLine());
 
-            //Prüfung des Zahlenbereiches des Tipps
+            //PrÃ¼fung des Zahlenbereiches des Tipps
             if (tipp < 0 || tipp > 100)
-                Console.WriteLine("Dein Tipp ist außerhalb des Zahlenbereiches.");
+                Console.WriteLine("Dein Tipp ist auÃŸerhalb des Zahlenbereiches.");
             else
             {
-                //Prüfung, ob Tipp eine Gewinnzahl ist und Ausgabe
+                //PrÃ¼fung, ob Tipp eine Gewinnzahl ist und Ausgabe
                 if (gewinnzahlen.Contains(tipp))
-                    Console.WriteLine("Glückwunsch!! Du hast eine der fünf Gewinnzahlen getippt.");
+                    Console.WriteLine("GlÃ¼ckwunsch!! Du hast eine der fÃ¼nf Gewinnzahlen getippt.");
                 else
-                    Console.WriteLine("Leider daneben. Viel Glück beim nächsten Mal.");
+                    Console.WriteLine("Leider daneben. Viel GlÃ¼ck beim nÃ¤chsten Mal.");
             }
             #endregion
         }

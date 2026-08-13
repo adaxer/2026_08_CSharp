@@ -10,7 +10,7 @@ namespace Lab11_ExcpetionHandling
         {
             //Variable, welche Wiederholung definiert
             bool wiederholen;
-            //Schleife für Wiederholung
+            //Schleife fÃ¼r Wiederholung
             do
             {
                 wiederholen = true;
@@ -18,7 +18,7 @@ namespace Lab11_ExcpetionHandling
                 //Eingabe durch Benutzer
                 string eingabe = GetEingabe();
 
-                //Try-Block für Code, welche möglicherweise Fehler verursacht
+                //Try-Block fÃ¼r Code, welche mÃ¶glicherweise Fehler verursacht
                 try
                 {
                     Term term = new Term(eingabe);
@@ -29,10 +29,10 @@ namespace Lab11_ExcpetionHandling
 
 					wiederholen = false;
                 }
-                //Catch-Blöcke zur Bearbeitung der Fehler
+                //Catch-BlÃ¶cke zur Bearbeitung der Fehler
                 catch (OverflowException)
                 {
-                    Console.WriteLine("Eine deiner Zahlen war zu groß oder zu klein.\n");
+                    Console.WriteLine("Eine deiner Zahlen war zu groÃŸ oder zu klein.\n");
                 }
                 catch (FormatException)
                 {
@@ -88,7 +88,7 @@ namespace Lab11_ExcpetionHandling
             this.Eingabe = term;
             this.Operation = this.GetRechenoperation();
 
-            //SplitTerm kann Null zurückgeben
+            //SplitTerm kann Null zurÃ¼ckgeben
             string[] zahlen = this.SplitTerm();
 
             //Parsing kann FormatExceptions und OverflowExceptions verursachen
@@ -123,7 +123,7 @@ namespace Lab11_ExcpetionHandling
                 case Rechenoperation.Division:
                     return this.Eingabe.Split('/');
             }
-            return null; //Null-Rückgabe kann später eine NullReferenceException verursachen
+            return null; //Null-RÃ¼ckgabe kann spÃ¤ter eine NullReferenceException verursachen
         }
     }
 }

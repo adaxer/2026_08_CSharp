@@ -15,35 +15,35 @@ namespace Fahrzeugpark
         public int MaxGeschwindigkeit { get; set; }
         public int AktGeschwindigkeit { get; set; }
         public double Preis { get; set; }
-        public bool MotorLäuft { get; set; }
+        public bool MotorLÃ¤uft { get; set; }
 
-        //Konstruktor mit Übergabeparametern und Standartwerten
+        //Konstruktor mit Ãœbergabeparametern und Standartwerten
         public Fahrzeug(string name, int maxG, double preis)
         {
             this.Name = name;
             this.MaxGeschwindigkeit = maxG;
             this.Preis = preis;
             this.AktGeschwindigkeit = 0;
-            this.MotorLäuft = false;
+            this.MotorLÃ¤uft = false;
         }
 
         //Methode zur Ausgabe von Objektinformationen
         public string Info()
         {
-            if (this.MotorLäuft)
-                return $"{this.Name} kostet {this.Preis}€ und fährt momentan mit {this.AktGeschwindigkeit} von maximal {this.MaxGeschwindigkeit}km/h.";
+            if (this.MotorLÃ¤uft)
+                return $"{this.Name} kostet {this.Preis}â‚¬ und fÃ¤hrt momentan mit {this.AktGeschwindigkeit} von maximal {this.MaxGeschwindigkeit}km/h.";
             else
-                return $"{this.Name} kostet {this.Preis}€ und könnte maximal {this.MaxGeschwindigkeit}km/h fahren.";
+                return $"{this.Name} kostet {this.Preis}â‚¬ und kÃ¶nnte maximal {this.MaxGeschwindigkeit}km/h fahren.";
         }
 
         //Methode zum Starten des Motors
         public void StarteMotor()
         {
-            if (this.MotorLäuft)
-                Console.WriteLine($"Der Motor von {this.Name} läuft bereits.");
+            if (this.MotorLÃ¤uft)
+                Console.WriteLine($"Der Motor von {this.Name} lÃ¤uft bereits.");
             else
             {
-                this.MotorLäuft = true;
+                this.MotorLÃ¤uft = true;
                 Console.WriteLine($"Der Motor von {this.Name} wurde gestartet.");
             }
         }
@@ -51,13 +51,13 @@ namespace Fahrzeugpark
         //Methode zum Stoppen des Motors
         public void StoppeMotor()
         {
-            if (!this.MotorLäuft)
+            if (!this.MotorLÃ¤uft)
                 Console.WriteLine($"Der Motor von {this.Name} ist bereits gestoppt");
             else if (this.AktGeschwindigkeit > 0)
                 Console.WriteLine($"Der Motor kann nicht gestoppt werden, da sich {this.Name} noch bewegt");
             else
             {
-                this.MotorLäuft = false;
+                this.MotorLÃ¤uft = false;
                 Console.WriteLine($"Der Motor von {this.Name} wurde gestoppt.");
             }
         }
@@ -65,7 +65,7 @@ namespace Fahrzeugpark
         //Methode zum Beschleunigen und Bremsen
         public void Beschleunige(int a)
         {
-            if (this.MotorLäuft)
+            if (this.MotorLÃ¤uft)
             {
                 if (this.AktGeschwindigkeit + a > this.MaxGeschwindigkeit)
                     this.AktGeschwindigkeit = this.MaxGeschwindigkeit;
@@ -85,16 +85,16 @@ namespace Fahrzeugpark
     {
         static void Main(string[] args)
         {
-            //Ändern des durch Console verwendeten Zeichensatzes auf Unicode (damit das €-Zeichen angezeigt werden kann)
+            //Ã„ndern des durch Console verwendeten Zeichensatzes auf Unicode (damit das â‚¬-Zeichen angezeigt werden kann)
             Console.OutputEncoding = System.Text.Encoding.Unicode;
 
             #region Lab 06: Fahrzeug-Klasse
             //Deklaration einer Fahrzeug-Variablen und Initialisierung mittels einer Fahrzeug-Instanz
             Fahrzeug fz1 = new Fahrzeug("Mercedes", 190, 23000);
-            //Ausführen der Info()-Methode des Fahrzeugs und Ausgabe in der Konsole
+            //AusfÃ¼hren der Info()-Methode des Fahrzeugs und Ausgabe in der Konsole
             Console.WriteLine(fz1.Info() + "\n");
 
-            //Diverse Methodenausführungen
+            //Diverse MethodenausfÃ¼hrungen
             fz1.StarteMotor();
             fz1.Beschleunige(120);
             Console.WriteLine(fz1.Info() + "\n");

@@ -1,15 +1,15 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-//Um auf ein anderes Projekt zugreifen zu können (hier: Fahrzeugpark) muss dieses zu den Abhängigkeiten (Dependencies) des aktuellen
-//Projekts hinzugefügt werden. Die using-Anweisung gewährt dann einen verkürzten Zugriff.
+//Um auf ein anderes Projekt zugreifen zu kÃ¶nnen (hier: Fahrzeugpark) muss dieses zu den AbhÃ¤ngigkeiten (Dependencies) des aktuellen
+//Projekts hinzugefÃ¼gt werden. Die using-Anweisung gewÃ¤hrt dann einen verkÃ¼rzten Zugriff.
 using Fahrzeugpark;
 
-//Mittels UNIT-Tests können Klassen kleinteilig langfristig getestet werden.
+//Mittels UNIT-Tests kÃ¶nnen Klassen kleinteilig langfristig getestet werden.
 namespace UnitTestFahrzeuge
 {
     [TestClass]
     public class PKW_Test
     {
-        //Test-Methoden werden durch den TestExplorer von VisualStudio als solche erkannt und können über diesen ausgeführt werden.
+        //Test-Methoden werden durch den TestExplorer von VisualStudio als solche erkannt und kÃ¶nnen Ã¼ber diesen ausgefÃ¼hrt werden.
         [TestMethod]
         public void Beschleunige_PKW_ueber_MaxG()
         {
@@ -18,7 +18,7 @@ namespace UnitTestFahrzeuge
             pkw.StarteMotor();
             pkw.Beschleunige(240);
 
-            //Jede Test-Methode benötigt mindestens einen Aufruf der ASSERT-Klasse, in welcher die Erfolgsbedingung des Tests überprüft wird
+            //Jede Test-Methode benÃ¶tigt mindestens einen Aufruf der ASSERT-Klasse, in welcher die Erfolgsbedingung des Tests Ã¼berprÃ¼ft wird
             Assert.AreEqual(pkw.MaxGeschwindigkeit, pkw.AktGeschwindigkeit);
         }
 

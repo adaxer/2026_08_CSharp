@@ -1,8 +1,8 @@
-//Mittels der USING-Anweisungen kann ein vereinfachter Zugriff auf Programm-Externe Klassen ermöglicht werden. Es muss nun nicht mehr der
-///vollständige Pfad angegeben werden, sondern es reicht der Klassenbezeichner
+//Mittels der USING-Anweisungen kann ein vereinfachter Zugriff auf Programm-Externe Klassen ermÃ¶glicht werden. Es muss nun nicht mehr der
+///vollstÃ¤ndige Pfad angegeben werden, sondern es reicht der Klassenbezeichner
 using System;
 
-//NAMESPACE: Die Umgebung unseres aktuellen Programms: Alles innerhalb des Namespaces gehört zu dem Programm
+//NAMESPACE: Die Umgebung unseres aktuellen Programms: Alles innerhalb des Namespaces gehÃ¶rt zu dem Programm
 namespace HelloWorld
 {
     //Die PROGRAM-Klasse beinhaltet den Einstiegspunkt des Programms und muss in jedem C#-Programm vorhanden sein
@@ -36,8 +36,8 @@ namespace HelloWorld
             Console.WriteLine(Kosten);
             
 
-            ///Einfügen dynamischer Inhalte in Strings
-            //'traditionell' über Stringverknüpfung (+-Operator)
+            ///EinfÃ¼gen dynamischer Inhalte in Strings
+            //'traditionell' Ã¼ber StringverknÃ¼pfung (+-Operator)
             string Satz = "Ich bin " + Alter + " Jahre alt und wohne in " + Stadt + ".";
             Console.WriteLine(Satz);
             Console.WriteLine("Ich bin " + Alter + " Jahre alt und wohne in " + Stadt + ".");
@@ -45,7 +45,7 @@ namespace HelloWorld
             Satz = $"Ich bin {Alter} Jahre alt und wohne in {Stadt}.";
             Console.WriteLine(Satz);
             Console.WriteLine($"Ich bin {Alter} Jahre alt und wohne in {Stadt}.");
-            //Index (Variablen werden durch Index-Platzhalter vertreten und später definiert)
+            //Index (Variablen werden durch Index-Platzhalter vertreten und spÃ¤ter definiert)
             Console.WriteLine("Ich bin {0} Jahre alt und wohne in {1}.", Alter, Stadt);
 
             //Ausgabe einer Berchnung in Strings
@@ -56,15 +56,15 @@ namespace HelloWorld
             //String-Formatierung mittels Escape-Sequenzen
             string bsp = "Dies ist ein \tTabulator und dies ein \nZeilenumbruch.";
             Console.WriteLine(bsp);
-            //Bsp für Pfadausgabe mittels Escape-Sequenzen
+            //Bsp fÃ¼r Pfadausgabe mittels Escape-Sequenzen
             string path = "C:\\Programme\\Programm.exe";
             Console.WriteLine(path);
 
-            //String-Formatierung mittels VerbaTim-String (Einleitung mittels @ / Escape-Sequenzen sind nicht möglich, dynamische Inhalte mittels $ schon)
+            //String-Formatierung mittels VerbaTim-String (Einleitung mittels @ / Escape-Sequenzen sind nicht mÃ¶glich, dynamische Inhalte mittels $ schon)
             string verbatim = @$"Dies ist ein    Tabulator und dies ein 
 Zeilenumbruch {Stadt}";
             Console.WriteLine(verbatim);
-            //Bsp für Pfadausgabe in Verbatim-String
+            //Bsp fÃ¼r Pfadausgabe in Verbatim-String
             path = @"C:\Programme\Programm.exe";
 
 
@@ -83,21 +83,21 @@ Zeilenumbruch {Stadt}";
             //Ausgabe
             Console.WriteLine(zahl);
 
-            //Benutzereingabe (Tastendruck) hier als Programmpause, bis Benutzer einer Taste drückt
+            //Benutzereingabe (Tastendruck) hier als Programmpause, bis Benutzer einer Taste drÃ¼ckt
             Console.ReadKey();
 
             //Umwandlung durch Convert.To[]()-Funktion
             zahl = Convert.ToInt32(78.45);
 
-            //Bsp für numerische Umwandlung (impliziet, da kein Datenverlust)
+            //Bsp fÃ¼r numerische Umwandlung (impliziet, da kein Datenverlust)
             int intZahl = 78;
             double doubleZahl = intZahl;
 
-            //Bsp für numerische Umwandlung mittels Cast (expliziet, da möglicherweise Datenverlust)
+            //Bsp fÃ¼r numerische Umwandlung mittels Cast (expliziet, da mÃ¶glicherweise Datenverlust)
             doubleZahl = 45.75;
             intZahl = (int)doubleZahl;
 
-            //Bsp für Teilung durch 0 von Gleitkommazahlen
+            //Bsp fÃ¼r Teilung durch 0 von Gleitkommazahlen
             double zero = 0.0;
             double z = 2 / zero;
             Console.WriteLine(z);

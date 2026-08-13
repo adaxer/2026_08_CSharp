@@ -6,7 +6,7 @@ namespace Lab11_ExcpetionHandling
 
     class Program
     {
-        //Füge in die Main()-Methode eine Try/Catch-Mechanik ein, welche mindestens vier verschiedene Exceptions abfängt und dem Benutzer eine
+        //FÃ¼ge in die Main()-Methode eine Try/Catch-Mechanik ein, welche mindestens vier verschiedene Exceptions abfÃ¤ngt und dem Benutzer eine
         //sinnvolle Fehlermeldung ausgibt. Etabliere zudem eine Mechanik, welche das Programm im Fehlerfall wiederholt.
         static void Main(string[] args)
         {
@@ -19,7 +19,7 @@ namespace Lab11_ExcpetionHandling
             Console.WriteLine($"\t={ergebnis}");
         }
 
-        //Codeänderungen sollen nur in der Main()-Methode stattfinden.
+        //CodeÃ¤nderungen sollen nur in der Main()-Methode stattfinden.
         static string GetEingabe()
         {
             Console.WriteLine("Bitte gib einen Term mit zwei Zahlen und einem Grundrechenoperator (+ - * /) ein (z.B.: 25+13):");

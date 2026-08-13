@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//DELEGATES sind Variablen, in welcher eine oder mehrere Referenzen auf Methoden gespeichert werden können
+//DELEGATES sind Variablen, in welcher eine oder mehrere Referenzen auf Methoden gespeichert werden kÃ¶nnen
 namespace Delegates
 {
-    //Definition eines eigenen Delegate-Datentypen. Die Signatur (Rückgabetyp, Übergabeparametertypen) definiert die Art von Methoden, welche hineingelegt werden können.
+    //Definition eines eigenen Delegate-Datentypen. Die Signatur (RÃ¼ckgabetyp, Ãœbergabeparametertypen) definiert die Art von Methoden, welche hineingelegt werden kÃ¶nnen.
     public delegate int MeinDelegate(int a, int b);
 
     class Program
@@ -16,7 +16,7 @@ namespace Delegates
             MeinDelegate delegateVariable;
             //Zuweisung der Variablen mit einer Methode (s.u.)
             delegateVariable = Addiere;
-            //Aufruf der Methode über Delegate-Variable
+            //Aufruf der Methode Ã¼ber Delegate-Variable
             int erg = delegateVariable(45, 12);
             Console.WriteLine(erg);
 
@@ -24,12 +24,12 @@ namespace Delegates
             delegateVariable = Subtrahiere;
             Console.WriteLine(delegateVariable(45, 12));
 
-            //per += können weitere Methoden hinzugefügt werden
+            //per += kÃ¶nnen weitere Methoden hinzugefÃ¼gt werden
             delegateVariable += Addiere;
             delegateVariable += Addiere;
             delegateVariable += Addiere;
             delegateVariable += Addiere;
-            //Alle Methoden werden nacheinander ausgefühert, aber nur der Rückgabewert der letzten Methode wird zurückgegeben
+            //Alle Methoden werden nacheinander ausgefÃ¼hert, aber nur der RÃ¼ckgabewert der letzten Methode wird zurÃ¼ckgegeben
             Console.WriteLine(delegateVariable(45, 12));
 
             //Ausgabe aller referenzierter Methoden
@@ -38,59 +38,59 @@ namespace Delegates
                 Console.WriteLine(item.Method);
             }
 
-            //per -= können Methoden aus dem Delegate gelöst werden
+            //per -= kÃ¶nnen Methoden aus dem Delegate gelÃ¶st werden
             delegateVariable -= Addiere;
-            //Löschen aller Referenzen
+            //LÃ¶schen aller Referenzen
             delegateVariable = null;
 
             //FUNC, ACTION und PREDICATE sind vordefinierte, generische Delegate-Datentypen
             Func<int, int, int> meinFunc = Addiere;
 
-            //Übergabe einer Methode an eine andere Methode
-            FühreAus(meinFunc);
-            FühreAus(Addiere);
+            //Ãœbergabe einer Methode an eine andere Methode
+            FÃ¼hreAus(meinFunc);
+            FÃ¼hreAus(Addiere);
 
             //Beispiel-Liste
-            List<string> Städteliste = new List<string>() { "München", "Berlin", "Hamburg", "Köln" };
+            List<string> StÃ¤dteliste = new List<string>() { "MÃ¼nchen", "Berlin", "Hamburg", "KÃ¶ln" };
             string gefundeneStadt;
 
-            //Aufruf der Find()-Funktion mit Übergabe einer Methode zur Definition der inneren Logik
-            gefundeneStadt = Städteliste.Find(SucheStadtMitB);
-            //Übergabe der Methode als anonyme Methode
-            gefundeneStadt = Städteliste.Find
+            //Aufruf der Find()-Funktion mit Ãœbergabe einer Methode zur Definition der inneren Logik
+            gefundeneStadt = StÃ¤dteliste.Find(SucheStadtMitB);
+            //Ãœbergabe der Methode als anonyme Methode
+            gefundeneStadt = StÃ¤dteliste.Find
                 (
                     delegate (string stadt)
                     {
                         return stadt.StartsWith('B');
                     }
                 );
-            //Übergabe der anonymen Methode in Lambda-Schreibweise (lang und kurz)
-            gefundeneStadt = Städteliste.Find((string stadt) => { return stadt.StartsWith('B'); });
+            //Ãœbergabe der anonymen Methode in Lambda-Schreibweise (lang und kurz)
+            gefundeneStadt = StÃ¤dteliste.Find((string stadt) => { return stadt.StartsWith('B'); });
 
-            gefundeneStadt = Städteliste.Find(stadt => stadt.StartsWith('B'));
+            gefundeneStadt = StÃ¤dteliste.Find(stadt => stadt.StartsWith('B'));
 
             //weiteres Lambda-Beispiel mit der OrderBy-Methode
-            Städteliste = Städteliste.OrderBy(stadt => stadt[0]).ToList();
-            foreach (var item in Städteliste)
+            StÃ¤dteliste = StÃ¤dteliste.OrderBy(stadt => stadt[0]).ToList();
+            foreach (var item in StÃ¤dteliste)
             {
                 Console.WriteLine(item);
             }
 
         }
 
-        //Beipiel-Methode für Übergabe an Find()
+        //Beipiel-Methode fÃ¼r Ãœbergabe an Find()
         public static bool SucheStadtMitB(string stadt)
         {
             return stadt.StartsWith('B');
         }
 
-        //Beispiel für Methode, welche einen Delegate als Übergabe erwartet
-        public static void FühreAus(Func<int, int, int> mehrLogik)
+        //Beispiel fÃ¼r Methode, welche einen Delegate als Ãœbergabe erwartet
+        public static void FÃ¼hreAus(Func<int, int, int> mehrLogik)
         {
             mehrLogik(45, 78);
         }
 
-        //Beispielmethoden für obige Delegate-Variablen
+        //Beispielmethoden fÃ¼r obige Delegate-Variablen
         public static int Addiere(int a, int b)
         {
             Console.WriteLine("Addiere");
