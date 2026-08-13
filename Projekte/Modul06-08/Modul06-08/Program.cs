@@ -58,6 +58,7 @@ public struct PointStruct
         return $"({X}, {Y})";
     }
 }
+
 public class PointClass
 {
     public int X { get; set; }
