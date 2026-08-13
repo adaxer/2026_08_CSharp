@@ -11,5 +11,14 @@ internal class Program
         auto.StarteMotor();
         auto.Beschleunige(50);
         Console.WriteLine(auto.Info());
+
+        auto = new Fahrzeug("Bmw", 250, 80000);
+        Console.WriteLine(auto.Info());
+
+        auto = new Fahrzeug("Fiat", 160, 20000);
+        Console.WriteLine(auto.Info());
+
+
+        Console.WriteLine(Fahrzeug.GetInstanceCount());
     }
 }

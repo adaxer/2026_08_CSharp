@@ -5,11 +5,20 @@ public class Fahrzeug
     #region Lab 06: Properties, Methoden, Konstruktor
 
     //Properties
+    public static int InstanceCount { get; private set; } = 0;
+
+    private static int _instanceCount = 0;
+
     public string Name { get; set; }
     public int MaxGeschwindigkeit { get; set; }
     public int AktGeschwindigkeit { get; set; }
     public double Preis { get; set; }
     public bool MotorLaeuft { get; set; }
+
+    public static string CounterInfo()
+    {
+        return $"Es wurden {_instanceCount} Fahrzeuge erstellt.";
+    }
 
     //Konstruktor mit Übergabeparametern und Standartwerten
     public Fahrzeug(string name, int maxG, double preis)
@@ -19,6 +28,14 @@ public class Fahrzeug
         Preis = preis;
         AktGeschwindigkeit = 0;
         MotorLaeuft = false;
+        InstanceCount++;
+        _instanceCount++;
+    }
+
+    // Ausgabe InstanceCount
+    public static string GetInstanceCount()
+    {
+        return $"Es wurden {InstanceCount} Fahrzeuge erstellt.";
     }
 
     //Methode zur Ausgabe von Objektinformationen
