@@ -13,13 +13,30 @@ class Program
     //sinnvolle Fehlermeldung ausgibt. Etabliere zudem eine Mechanik, welche das Programm im Fehlerfall wiederholt.
     static void Main(string[] args)
     {
-        string eingabe = GetEingabe();
+        bool success = false;
+        do
+        {
+            try
+            {
+                string eingabe = GetEingabe();
 
-        Term term = new Term(eingabe);
+                Term term = new Term(eingabe);
 
-        int ergebnis = BerechneTerm(term);
+                int ergebnis = BerechneTerm(term);
 
-        Console.WriteLine($"\t={ergebnis}");
+                Console.WriteLine($"{eingabe} = {ergebnis}");
+
+                success = true;
+            } 
+            catch(NullReferenceException)
+            {
+                Console.WriteLine("Bitte gültige Eingabe: Zahl Operator Zahl");
+            }
+            catch(FormatException) 
+            {
+                Console.WriteLine("Bitte nur ganze Zahlen eingeben.");
+            }
+        } while (!success);
     }
 
     //Codeänderungen sollen nur in der Main()-Methode stattfinden.
